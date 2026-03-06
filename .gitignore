@@ -1,1 +1,3 @@
 .vscode/
+*.dat
+*.h5
