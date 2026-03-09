@@ -83,6 +83,9 @@ semi = SemidiscretizationHyperbolic(mesh, equations, initial_condition, solver,
 #ode = semidiscretize(semi, tspan)
 
 restart_file = "restart_tc_6049.h5"
+using Downloads
+Downloads.download("https://zenodo.org/records/18921762/files/restart_tc_6049.h5?download=1", joinpath(base_path, restart_file))
+
 restart_filename = joinpath(base_path, restart_file)
 
 # Need to overload this due to breaking change after restart files have been constructed
