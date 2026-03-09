@@ -150,13 +150,7 @@ save_solution = SaveSolutionCallback(interval = save_sol_interval,
                                      solution_variables = cons2prim,
                                      output_directory="out/")
 
-save_restart = SaveRestartCallback(interval = save_sol_interval,
-                                   save_final_restart = true,
-                                   output_directory="out/")
-
 #=
-base_path = "/storage/home/daniel/OneraM6/Spectra_OptimizedCoeffs/LLF_FD_Ranocha/"
-path = base_path * "k3/p4/"
 
 safety_factor = 1.8
 dtRatios_complete_p4_mod = [
@@ -176,7 +170,7 @@ dtRatios_complete_p4_mod = [
                       ] ./ 0.460652348399162
 Stages_complete_p4 = reverse(collect(range(5, 17)))
 
-ode_alg = Trixi.PairedExplicitRK4Multi(Stages_complete_p4, path, dtRatios_complete_p4_mod)
+ode_alg = Trixi.PairedExplicitRK4Multi(Stages_complete_p4, base_path * "PERK_Coeffs/", dtRatios_complete_p4_mod)
 cfl = 9.5
 =#
 
@@ -187,9 +181,8 @@ stepsize_callback = StepsizeCallback(cfl = cfl, interval = 2)
 
 callbacks = CallbackSet(summary_callback,
                         alive_callback,
-                        #analysis_callback,
-                        #save_solution,
-                        #save_restart,
+                        analysis_callback,
+                        save_solution,
                         stepsize_callback);
 
 # Run the simulation

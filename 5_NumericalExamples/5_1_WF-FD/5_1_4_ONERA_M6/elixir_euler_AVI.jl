@@ -97,14 +97,14 @@ function Trixi.calc_volume_integral!(du, u,
 
         if dg_only
             Trixi.weak_form_kernel!(du, u, element, mesh,
-                              nonconservative_terms, equations,
-                              dg, cache)
+                                    nonconservative_terms, equations,
+                                    dg, cache)
         else
             # CARE: Quick & dirty test for ONERA M6
             # Calculate DG volume integral contribution
             Trixi.flux_differencing_kernel!(du, u, element, mesh,
-                                      nonconservative_terms, equations,
-                                      volume_integral_blend_high_order.volume_flux, dg, cache)
+                                            nonconservative_terms, equations,
+                                            volume_integral_blend_high_order.volume_flux, dg, cache)
         end
     end
 
@@ -219,9 +219,29 @@ save_solution = SaveSolutionCallback(interval = save_sol_interval,
                                      solution_variables = cons2prim,
                                      output_directory="out/")
 
-save_restart = SaveRestartCallback(interval = save_sol_interval,
-                                   save_final_restart = true,
-                                   output_directory="out/")
+#=
+
+safety_factor = 1.8
+dtRatios_complete_p4_mod = [
+    0.460652348399162,
+    0.416693951487541 / safety_factor,
+    0.381378587856889 / safety_factor,
+    0.350212497711182 / safety_factor,
+    0.324112872034311 / safety_factor,
+    0.281054820492864 / safety_factor,
+    0.245423326268792 / safety_factor,
+    0.211017424166203 / safety_factor,
+    0.174579094536602 / safety_factor,
+    0.154489312693477 / safety_factor,
+    0.11951766833663 / safety_factor,
+    0.0794953770935535 / safety_factor,
+    0.0439409114420414 / safety_factor
+                      ] ./ 0.460652348399162
+Stages_complete_p4 = reverse(collect(range(5, 17)))
+
+ode_alg = Trixi.PairedExplicitRK4Multi(Stages_complete_p4, base_path * "PERK_Coeffs/", dtRatios_complete_p4_mod)
+cfl = 9.5
+=#
 
 ode_alg = Trixi.PairedExplicitRK4(12, base_path * "PERK_Coeffs/")
 cfl = 10.0
@@ -233,9 +253,8 @@ indicator_hg_callback = IndicatorHGCallback(interval = 3)
 
 callbacks = CallbackSet(summary_callback,
                         alive_callback,
-                        #analysis_callback,
-                        #save_solution,
-                        #save_restart,
+                        analysis_callback,
+                        save_solution,
                         stepsize_callback,
                         indicator_hg_callback # NOTE: Required for `VolumeIntegralAdaptive`!
                         );
