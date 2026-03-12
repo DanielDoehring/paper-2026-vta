@@ -83,7 +83,8 @@ alive_callback = AliveCallback(alive_interval = 100) # 1 for finding crash times
 stepsize_callback = StepsizeCallback(cfl = 1.8)
 
 save_solution = SaveSolutionCallback(interval = 10_000,
-                                     solution_variables = cons2prim)
+                                     solution_variables = cons2prim,
+                                     output_directory = "5_NumericalExamples/5_1_WF-FD/5_1_1_KHI_Quads_Rigorous/")
 
 callbacks = CallbackSet(summary_callback,
                         analysis_callback, alive_callback,

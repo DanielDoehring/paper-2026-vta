@@ -70,12 +70,8 @@ alive_callback = AliveCallback(alive_interval = 100) # 1 for finding crash times
 
 stepsize_callback = StepsizeCallback(cfl = 1.8)
 
-save_solution = SaveSolutionCallback(interval = 10_000,
-                                     solution_variables = cons2prim)
-
 callbacks = CallbackSet(summary_callback,
                         analysis_callback, alive_callback,
-                        save_solution,
                         stepsize_callback)
 
 ###############################################################################
