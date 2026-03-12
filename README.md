@@ -1,4 +1,8 @@
 # paper-2026-vta
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-success.svg)](https://opensource.org/licenses/MIT)
+[![DOI](https://zenodo.org/badge/996624801.svg)](https://doi.org/10.5281/zenodo.18983661 )
+
 Reproducibility Repository for the Paper "Volume Term Adaptivity for Discontinuous Galerkin Methods"
 
 
