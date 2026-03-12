@@ -34,6 +34,7 @@ plt.plot(df_FD[1], df_FD.iloc[:, -1] - df_FD.iloc[0, -1], color = RWTH_Carmine_R
 plt.plot(df_WF[1], df_WF.iloc[:, -1] - df_WF.iloc[0, -1], color = RWTH_Orange_RGB[0], label = r"Weak Form")
 #plt.scatter(df_p4[1], df_p4.iloc[:, -1], color = RWTH_Orange_RGB[0])
 
+#plt.title(r"$\Delta S(t)$")
 plt.title(r"$S(t) - S(t_0)$")
 
 
@@ -47,7 +48,8 @@ ax.grid(axis ='x', which='both', alpha=0.1, linewidth = 1.5, color ='black')
 ax.set_axisbelow(True)  # Hide grid 
 
 eps_x = 0.1
-ax.set_xlim([-eps_x, 5.25 + eps_x])
+ax.set_xlim([-eps_x, 4.6 + eps_x])
+#ax.set_ylim([-0.06, 0.002])
 
 ax.set_xlabel(r'$t$')
 
@@ -57,6 +59,6 @@ fig.set_size_inches(width * factor, height * factor)
 
 plt.tight_layout()  # Title, labels, ... to screen
 
-plt.savefig('Entropy_KHI_Quads_Rigorous.pgf', bbox_inches = 'tight', pad_inches = 0)
+plt.savefig('Entropy_KHI_Tris_Heuristic.pgf', bbox_inches = 'tight', pad_inches = 0)
 
 plt.show()
