@@ -1,7 +1,7 @@
 # paper-2026-vta
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-success.svg)](https://opensource.org/licenses/MIT)
-[![DOI](https://zenodo.org/badge/996624801.svg)](https://doi.org/10.5281/zenodo.18983661 )
+[![DOI](https://zenodo.org/badge/996624801.svg)](https://doi.org/10.5281/zenodo.18983661)
 
 Reproducibility Repository for the Paper "Volume Term Adaptivity for Discontinuous Galerkin Methods"
 
@@ -13,7 +13,7 @@ If you use the implementations provided here, please also cite this repository a
   author={Doehring, Daniel and Jesse, Chan and Ranocha, Hendrik and Michael, Schlottke-Lakemper and Torrilhon, Manuel and Gregor, Gassner},
   year={2026},
   howpublished={\url{https://github.com/DanielDoehring/paper-2026-vta}},
-  doi={https://doi.org/??}
+  doi={https://doi.org/10.5281/zenodo.18983661}
 }
 ```
 
