@@ -100,7 +100,7 @@ For visualization of the simulation results, [`Trixi2Vtk](https://github.com/tri
 ## Authors
 
 * [Daniel Doehring](https://www.acom.rwth-aachen.de/the-lab/team-people/name:daniel_doehring) (Corresponding Author)
-* [Jess Chan](https://sites.google.com/view/jessechan/home)
+* [Jesse Chan](https://sites.google.com/view/jessechan/home)
 * [Hendrik Ranocha](https://ranocha.de/home#gsc.tab=0)
 * [Michael Schlottke-Lakemper](https://lakemper.eu/)
 * [Manuel Torrilhon](https://www.acom.rwth-aachen.de/the-lab/team-people/name:manuel_torrilhon)
