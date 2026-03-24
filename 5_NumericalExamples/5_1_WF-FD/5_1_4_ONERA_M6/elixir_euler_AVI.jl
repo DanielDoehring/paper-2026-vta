@@ -155,13 +155,9 @@ restart_file = "restart_tc_6049.h5"
 using Downloads
 Downloads.download("https://zenodo.org/records/18921762/files/restart_tc_6049.h5?download=1", joinpath(base_path, restart_file))
 
+include("restart_diff_polydeg.jl")
+
 restart_filename = joinpath(base_path, restart_file)
-
-# Need to overload this due to breaking change after restart files have been constructed
-function Trixi.varnames(::typeof(cons2cons), ::CompressibleEulerEquations3D)
-    return ("rho", "rho_v1", "rho_v2", "rho_v3", "rho_e")
-end
-
 tspan = (load_time(restart_filename), 6.05)
 ode = semidiscretize(semi, tspan, restart_filename)
 
