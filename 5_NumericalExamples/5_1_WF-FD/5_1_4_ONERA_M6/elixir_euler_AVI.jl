@@ -217,7 +217,7 @@ save_solution = SaveSolutionCallback(interval = save_sol_interval,
 
 #=
 
-safety_factor = 1.8
+safety_factor = 1.75
 dtRatios_complete_p4_mod = [
     0.460652348399162,
     0.416693951487541 / safety_factor,
