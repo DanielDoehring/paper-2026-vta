@@ -4,7 +4,18 @@
 [![DOI](https://zenodo.org/badge/996624801.svg)](https://doi.org/10.5281/zenodo.18983661)
 
 Reproducibility Repository for the Paper "Volume Term Adaptivity for Discontinuous Galerkin Methods"
-
+```bibtex
+@online{doehring2026VTA,
+  title={Volume Term Adaptivity for Discontinuous {G}alerkin Methods},
+  author={Doehring, Daniel and Jesse, Chan and Ranocha, Hendrik and Michael, Schlottke-Lakemper and Torrilhon, Manuel and Gregor, Gassner},
+  year={2026},
+  eprinttype={arxiv},
+  eprintclass={math.NA},
+  url={https://arxiv.org/abs/2603.24189},
+  journal={arXiv preprint arXiv:2603.24189},
+  doi={10.48550/arXiv.2603.24189}
+}
+```
 
 If you use the implementations provided here, please also cite this repository as
 ```bibtex
